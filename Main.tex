@@ -1,0 +1,68 @@
+% Packages & Document Configurations
+\documentclass{4610-Report}
+
+% Authors & Supervisor
+\firstauthor{Thomas Housley}
+\secondauthor{Matthew Mehrtens}
+\thirdauthor{Bradley Nordwall}
+\fourthauthor{Patricia Ovono}
+\fifthauthor{Lucas Tavares Vasconcellos}
+\sixthauthor{Ethan Witt}
+
+\supervisor{Professor Travis Grager}
+
+% Report Title & Subtitle
+\title{Aircraft Sizing and Initial Concepts}
+\subtitle{StratoShield}
+
+% Affiliations
+\university{Iowa State University}
+\degree{Aerospace Engineering}
+\school{College of Engineering}
+\course{AERE 4610 Modern Design Methodology with Aerospace Applications}
+
+% Locale & Date
+\date{\today}
+
+% Make and Load Glossary & Acronyms
+\makeglossaries
+\loadglsentries{Miscellaneous/00-Glossary}
+\loadglsentries[\acronymtype]{Miscellaneous/01-Acronyms}
+
+\begin{document}
+
+% Covers
+\include{Covers/00-Cover}
+
+% Roman numeration
+\pagenumbering{roman}
+
+% List of contents, figures, and tables
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Print Glossary & Acronym
+\printglossary
+\printglossary[type=\acronymtype]
+\clearpage
+
+% Arabic numeration
+\pagenumbering{arabic}
+
+% Chapters
+\include{Chapters/00-Introduction}
+\include{Chapters/10-Airfoil_Selection}
+\include{Chapters/20-Initial_Sizing}
+\include{Chapters/30-Initial_Weights}
+\include{Chapters/40-Concept_Sketches}
+\include{Chapters/50-Conclusion}
+
+% Bibliography
+\printbibliography
+
+% Appendices
+\appendix
+\input{Chapters/Appendices/00-AppendixA}
+
+\end{document}

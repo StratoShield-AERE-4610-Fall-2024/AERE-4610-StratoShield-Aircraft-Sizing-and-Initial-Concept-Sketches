@@ -1,0 +1,62 @@
+\chapter{Weight}\label{cp:weight}
+
+\section{Structures}
+
+To estimate the weight of the aircraft wings, we assumed the wings would be composed of carbon-fiber spars encased in ``purple foam'' (presumably a type of polystyrene foam). Using the densities and weights given by \citet{grager2024}, we calculated and tabulated the estimated weights of different section of the Banshee, shown in \autoref{tbl:estimated_structures_weights}.
+
+\begin{table}[htpb]
+    \centering
+    \caption[Initial structural weight estimates]{Initial estimates of the different structural components of the Banshee.}
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{Component} & \textbf{Mass} \\
+        \midrule
+        wing foam & \qty{167}{\gram} \\
+        wing spars & \qty{193}{\gram} \\
+        tail foam & \qty{23}{\gram} \\
+        tail spar & \qty{65}{\gram} \\
+        boom & \qty{50}{\gram} \\
+        fuselage & \qty{488}{\gram} \\
+        \bottomrule
+        & \qty{986}{\gram} \\
+    \end{tabular}
+    \label{tbl:estimated_structures_weights}
+\end{table}
+
+\noindent \autoref{tbl:estimated_structures_weights} only considers the mass of the Banshee's structural components.
+
+\section{Payload}
+
+According to our mission proposal, the Banshee must be equipped with components capable of detecting, tracking, and jamming a \acrshort{suas}. Research is ongoing to determine what components we need to meet this requirement.
+
+Based on some preliminary research, however, we have determined we will need a jamming payload and an antenna to propagate the jamming signals. The specifications of the jamming modules and antenna are tabulated in \autoref{tbl:payload}.
+
+\begin{table}[htpb]
+    \centering
+    \caption[Initial payload estimates]{Initial estimates of the Banshee's payload components.}
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Component} & \textbf{Mass} & \textbf{Size (L x W x H)} \\
+        \midrule
+        Signal Jamming Module (\qty{2.4}{\giga\hertz}) & \qty{102}{\gram} & \qtyproduct{97 x 43 x 17}{\milli\meter} \\
+        Signal Jamming Module (\qty{5.8}{\giga\hertz}) & \qty{102}{\gram} & \qtyproduct{97 x 43 x 17}{\milli\meter} \\
+        Antenna & \qty{166}{\gram} & \qtyproduct{293 x 98 x 35}{\milli\meter} \\
+        \bottomrule
+        & \qty{370}{\gram} & \\
+    \end{tabular}
+    \label{tbl:payload}
+\end{table}
+
+These jamming modules are lighter than the original payload we specified when we ran our weight and \acrfull{cg} calculations—in part because the original payload component also had tracking and detection capabilities. The payload mass we specified in our analysis was \qty{1.275}{\kilo\gram}.
+
+\section{Total Weight}
+
+Based on the total weights calculated in \autoref{tbl:estimated_structures_weights} and \autoref{tbl:payload}, the currently estimated structures and payload weight is \qty{1.36}{\kilo\gram}. The weight we used in our \acrshort{cg} calculations was \qty{2.26}{\kilo\gram}.
+
+We expect the actual weight to be closer to \qty{10}{\kilo\gram} once the weight of batteries, electronics, and other payload components are estimated. These trade studies will be carried in the coming weeks.
+
+\section{Center of Gravity}
+
+To provide the flight performance team with a sense of the aircraft balance, the structural engineering team conducted a rough \acrshort{cg} estimate, considering only the approximate weights and locations of the payload and structural components discussed above. The \acrshort{matlab} script used to estimate the \acrshort{cg} can be found in \autoref{code:calculate_cg}. The resulting \acrshort{cg} position was approximately \qty{36}{\centi\meter}. For reference, the trailing edge of the wing is at approximately \qty{41}.
+
+Obviously, there is a significant amount of mass missing from this analysis, but it served as a reasonable starting point.
